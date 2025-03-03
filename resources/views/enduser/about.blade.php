@@ -2,18 +2,7 @@
 @section('title', 'about')
 @section('about-active', 'active')
 @section('hero')
-    <div class="container-xxl bg-primary page-header">
-        <div class="container text-center">
-            <h1 class="text-white animated zoomIn mb-3">About Us</h1>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-white active" aria-current="page">About</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
+    <x-bread-crumb title="About us" subTitle="About" />
 @endsection
 
 
@@ -135,8 +124,8 @@
         </div>
     </div>
     <!-- Features End -->
-       <!-- Team Start -->
-       <div class="container-xxl py-6">
+    <!-- Team Start -->
+    <div class="container-xxl py-6">
         <div class="container">
             <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Our Team</div>
