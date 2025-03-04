@@ -24,6 +24,11 @@ Route::get('/about', function () {
 Route::view('/service', 'enduser.service')->name('service');
 Route::view('/contact', 'enduser.contact')->name('contact');
 
+Route::name('admin.')->prefix('admin')->group(function () {
+    Route::view('/', 'admin.index');
+});
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
