@@ -8,13 +8,15 @@
     </form>
     <ul class="nav">
         <li class="nav-item">
+            @include('admin.partials.languageSwitcher')
+        </li>
+        <li class="nav-item">
             <a class="nav-link text-muted my-2" href="#" id="modeSwitcher" data-mode="light">
                 <i class="fe fe-sun fe-16"></i>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-muted my-2" href="./#" data-toggle="modal"
-                data-target=".modal-shortcut">
+            <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-shortcut">
                 <span class="fe fe-grid fe-16"></span>
             </a>
         </li>
@@ -36,6 +38,10 @@
                 <a class="dropdown-item" href="#">Profile</a>
                 <a class="dropdown-item" href="#">Settings</a>
                 <a class="dropdown-item" href="#">Activities</a>
+                <form method="POST" action="{{ route('admin.logout') }}">
+                    @csrf
+                    <button type="submit" class="dropdown-item">{{ __('admin.logout') }}</button>
+                </form>
             </div>
         </li>
     </ul>

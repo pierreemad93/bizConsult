@@ -6,9 +6,9 @@
         <!-- nav bar -->
         <div class="w-100 mb-4 d-flex">
             <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
-                <svg version="1.1" id="logo" class="navbar-brand-img brand-sm"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                    y="0px" viewBox="0 0 120 120" xml:space="preserve">
+                <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120"
+                    xml:space="preserve">
                     <g>
                         <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
                         <polygon class="st0" points="96,69 33,69 42,51 105,51 	" />
@@ -19,15 +19,14 @@
         </div>
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item dropdown">
-                <a href="#dashboard" data-toggle="collapse" aria-expanded="false"
-                    class="dropdown-toggle nav-link">
+                <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-home fe-16"></i>
-                    <span class="ml-3 item-text">Dashboard</span><span class="sr-only">(current)</span>
+                    <span class="ml-3 item-text">{{ __('admin.dashboard') }}</span><span
+                        class="sr-only">(current)</span>
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="dashboard">
                     <li class="nav-item active">
-                        <a class="nav-link pl-3" href="./index.html"><span
-                                class="ml-1 item-text">Default</span></a>
+                        <a class="nav-link pl-3" href="./index.html"><span class="ml-1 item-text">Default</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pl-3" href="./dashboard-analytics.html"><span
@@ -53,15 +52,13 @@
         </p>
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item dropdown">
-                <a href="#ui-elements" data-toggle="collapse" aria-expanded="false"
-                    class="dropdown-toggle nav-link">
+                <a href="#ui-elements" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-box fe-16"></i>
                     <span class="ml-3 item-text">UI elements</span>
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-color.html"><span
-                                class="ml-1 item-text">Colors</span>
+                        <a class="nav-link pl-3" href="./ui-color.html"><span class="ml-1 item-text">Colors</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -69,8 +66,7 @@
                                 class="ml-1 item-text">Typograpy</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-icons.html"><span
-                                class="ml-1 item-text">Icons</span></a>
+                        <a class="nav-link pl-3" href="./ui-icons.html"><span class="ml-1 item-text">Icons</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pl-3" href="./ui-buttons.html"><span
@@ -81,12 +77,11 @@
                                 class="ml-1 item-text">Notifications</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-modals.html"><span
-                                class="ml-1 item-text">Modals</span></a>
+                        <a class="nav-link pl-3" href="./ui-modals.html"><span class="ml-1 item-text">Modals</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-tabs-accordion.html"><span
-                                class="ml-1 item-text">Tabs & Accordion</span></a>
+                        <a class="nav-link pl-3" href="./ui-tabs-accordion.html"><span class="ml-1 item-text">Tabs &
+                                Accordion</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pl-3" href="./ui-progress.html"><span
@@ -102,19 +97,18 @@
                 </a>
             </li>
             <li class="nav-item dropdown">
-                <a href="#forms" data-toggle="collapse" aria-expanded="false"
-                    class="dropdown-toggle nav-link">
+                <a href="#forms" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-credit-card fe-16"></i>
                     <span class="ml-3 item-text">Forms</span>
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="forms">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./form_elements.html"><span
-                                class="ml-1 item-text">Basic Elements</span></a>
+                        <a class="nav-link pl-3" href="./form_elements.html"><span class="ml-1 item-text">Basic
+                                Elements</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./form_advanced.html"><span
-                                class="ml-1 item-text">Advanced Elements</span></a>
+                        <a class="nav-link pl-3" href="./form_advanced.html"><span class="ml-1 item-text">Advanced
+                                Elements</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pl-3" href="./form_validation.html"><span
@@ -135,8 +129,7 @@
                 </ul>
             </li>
             <li class="nav-item dropdown">
-                <a href="#tables" data-toggle="collapse" aria-expanded="false"
-                    class="dropdown-toggle nav-link">
+                <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-grid fe-16"></i>
                     <span class="ml-3 item-text">Tables</span>
                 </a>
@@ -146,25 +139,24 @@
                                 Tables</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./table_advanced.html"><span
-                                class="ml-1 item-text">Advanced Tables</span></a>
+                        <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Advanced
+                                Tables</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./table_datatables.html"><span
-                                class="ml-1 item-text">Data Tables</span></a>
+                        <a class="nav-link pl-3" href="./table_datatables.html"><span class="ml-1 item-text">Data
+                                Tables</span></a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
-                <a href="#charts" data-toggle="collapse" aria-expanded="false"
-                    class="dropdown-toggle nav-link">
+                <a href="#charts" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-pie-chart fe-16"></i>
                     <span class="ml-3 item-text">Charts</span>
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="charts">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./chart-inline.html"><span
-                                class="ml-1 item-text">Inline Chart</span></a>
+                        <a class="nav-link pl-3" href="./chart-inline.html"><span class="ml-1 item-text">Inline
+                                Chart</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pl-3" href="./chart-chartjs.html"><span
@@ -192,8 +184,7 @@
                 </a>
             </li>
             <li class="nav-item dropdown">
-                <a href="#contact" data-toggle="collapse" aria-expanded="false"
-                    class="dropdown-toggle nav-link">
+                <a href="#contact" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-book fe-16"></i>
                     <span class="ml-3 item-text">Contacts</span>
                 </a>
@@ -207,24 +198,20 @@
                 </ul>
             </li>
             <li class="nav-item dropdown">
-                <a href="#profile" data-toggle="collapse" aria-expanded="false"
-                    class="dropdown-toggle nav-link">
+                <a href="#profile" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-user fe-16"></i>
                     <span class="ml-3 item-text">Profile</span>
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="profile">
                     <a class="nav-link pl-3" href="./profile.html"><span class="ml-1">Overview</span></a>
-                    <a class="nav-link pl-3" href="./profile-settings.html"><span
-                            class="ml-1">Settings</span></a>
-                    <a class="nav-link pl-3" href="./profile-security.html"><span
-                            class="ml-1">Security</span></a>
+                    <a class="nav-link pl-3" href="./profile-settings.html"><span class="ml-1">Settings</span></a>
+                    <a class="nav-link pl-3" href="./profile-security.html"><span class="ml-1">Security</span></a>
                     <a class="nav-link pl-3" href="./profile-notification.html"><span
                             class="ml-1">Notifications</span></a>
                 </ul>
             </li>
             <li class="nav-item dropdown">
-                <a href="#fileman" data-toggle="collapse" aria-expanded="false"
-                    class="dropdown-toggle nav-link">
+                <a href="#fileman" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-folder fe-16"></i>
                     <span class="ml-3 item-text">File Manager</span>
                 </a>
@@ -236,16 +223,13 @@
                 </ul>
             </li>
             <li class="nav-item dropdown">
-                <a href="#support" data-toggle="collapse" aria-expanded="false"
-                    class="dropdown-toggle nav-link">
+                <a href="#support" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-compass fe-16"></i>
                     <span class="ml-3 item-text">Help Desk</span>
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="support">
-                    <a class="nav-link pl-3" href="./support-center.html"><span
-                            class="ml-1">Home</span></a>
-                    <a class="nav-link pl-3" href="./support-tickets.html"><span
-                            class="ml-1">Tickets</span></a>
+                    <a class="nav-link pl-3" href="./support-center.html"><span class="ml-1">Home</span></a>
+                    <a class="nav-link pl-3" href="./support-tickets.html"><span class="ml-1">Tickets</span></a>
                     <a class="nav-link pl-3" href="./support-ticket-detail.html"><span class="ml-1">Ticket
                             Detail</span></a>
                     <a class="nav-link pl-3" href="./support-faqs.html"><span class="ml-1">FAQs</span></a>
@@ -257,8 +241,7 @@
         </p>
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item dropdown">
-                <a href="#pages" data-toggle="collapse" aria-expanded="false"
-                    class="dropdown-toggle nav-link">
+                <a href="#pages" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-file fe-16"></i>
                     <span class="ml-3 item-text">Pages</span>
                 </a>
@@ -296,8 +279,7 @@
                 </ul>
             </li>
             <li class="nav-item dropdown">
-                <a href="#auth" data-toggle="collapse" aria-expanded="false"
-                    class="dropdown-toggle nav-link">
+                <a href="#auth" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-shield fe-16"></i>
                     <span class="ml-3 item-text">Authentication</span>
                 </a>
@@ -305,8 +287,7 @@
                     <a class="nav-link pl-3" href="./auth-login.html"><span class="ml-1">Login 1</span></a>
                     <a class="nav-link pl-3" href="./auth-login-half.html"><span class="ml-1">Login
                             2</span></a>
-                    <a class="nav-link pl-3" href="./auth-register.html"><span
-                            class="ml-1">Register</span></a>
+                    <a class="nav-link pl-3" href="./auth-register.html"><span class="ml-1">Register</span></a>
                     <a class="nav-link pl-3" href="./auth-resetpw.html"><span class="ml-1">Reset
                             Password</span></a>
                     <a class="nav-link pl-3" href="./auth-confirm.html"><span class="ml-1">Confirm
@@ -314,19 +295,17 @@
                 </ul>
             </li>
             <li class="nav-item dropdown">
-                <a href="#layouts" data-toggle="collapse" aria-expanded="false"
-                    class="dropdown-toggle nav-link">
+                <a href="#layouts" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-layout fe-16"></i>
                     <span class="ml-3 item-text">Layout</span>
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="layouts">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./index.html"><span
-                                class="ml-1 item-text">Default</span></a>
+                        <a class="nav-link pl-3" href="./index.html"><span class="ml-1 item-text">Default</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./index-horizontal.html"><span
-                                class="ml-1 item-text">Top Navigation</span></a>
+                        <a class="nav-link pl-3" href="./index-horizontal.html"><span class="ml-1 item-text">Top
+                                Navigation</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pl-3" href="./index-boxed.html"><span
