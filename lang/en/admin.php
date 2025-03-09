@@ -13,6 +13,7 @@ return [
     'remember' => 'Remember',
     'logout' => 'Logout',
     //
+    'home' => 'Home',
     'components' => 'Components',
     //services 
     'service' => 'Service',
