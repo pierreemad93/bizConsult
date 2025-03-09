@@ -13,9 +13,7 @@
 
         <div class="card shadow">
             <div class="card-body">
-                @session('success')
-                    <div class="alert alert-success">{{ session('success') }}</div>
-                @endsession
+                <x-success-alert />
 
                 <table class="table table-hover">
                     <thead>
