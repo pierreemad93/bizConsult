@@ -31,13 +31,7 @@
         </p>
         <ul class="navbar-nav flex-fill w-100 mb-2">
             {{-- Services --}}
-            <li class="nav-item w-100">
-                <a class="nav-link" href="{{ route('admin.services.index') }}">
-                    <i class="fe fe-layers fe-16"></i>
-                    <span class="ml-3 item-text">{{ __('admin.service') }}</span>
-                </a>
-            </li>
-
+            <x-sidebar-tab route="{{ route('admin.services.index') }}" icon="fe-layers" name="{{ __('admin.service') }}" />
         </ul>
 
     </nav>
