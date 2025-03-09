@@ -54,11 +54,7 @@
                                 </td>
                             </tr>
                         @empty
-                            <tr>
-                                <td colspan="4" class="text-center text-muted">
-                                    {{ __('admin.no_services_found') }}
-                                </td>
-                            </tr>
+                            <x-no-record-found name="{{ __('admin.no_services_found') }}" />
                         @endforelse
                     </tbody>
                 </table>
