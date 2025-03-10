@@ -17,35 +17,27 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group mb-3">
-                            <label>{{ __('admin.title') }}</label>
+                            <x-input-label>{{ __('admin.title') }}</x-input-label>
                             <input type="text" class="form-control" name="title" value="{{ $service->title }}">
-                            @error('title')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                            <x-input-error :messages="$errors->get('title')" />
                         </div>
                     </div> <!-- /.col -->
                     <div class="col-md-6">
                         <div class="form-group mb-3">
-                            <label>{{ __('admin.icon') }}</label>
+                            <x-input-label>{{ __('admin.icon') }}</x-input-label>
                             <input type="text" class="form-control" name="icon" value="{{ $service->icon }}">
-                            @error('icon')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                            <x-input-error :messages="$errors->get('icon')" />
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group mb-3">
-                            <label>{{ __('admin.description') }}</label>
-                            <textarea class="form-control" rows="4" name="description">
-                                {{ $service->description }}
-                            </textarea>
-                            @error('description')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                            <x-input-label>{{ __('admin.description') }}</x-input-label>
+                            <textarea class="form-control" rows="4" name="description">{{ $service->description }}</textarea>
+                            <x-input-error :messages="$errors->get('description')" />
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary mt-3">{{ __('admin.submit') }}</button>
+                <x-primary-button>{{ __('admin.submit') }}</x-primary-button>
             </form>
         </div>
 
