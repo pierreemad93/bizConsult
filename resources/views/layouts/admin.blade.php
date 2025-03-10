@@ -2,7 +2,7 @@
 <html lang="en">
 @include('admin.partials.head')
 
-<body class="vertical  light @if (LaravelLocalization::getCurrentLocale() == 'ar') rtl  @endif">
+<body class="vertical  light @if (LaravelLocalization::getCurrentLocale() == 'ar') rtl @endif">
     <div class="wrapper">
         @include('admin.partials.navbar')
         @include('admin.partials.sidebar')
@@ -12,6 +12,14 @@
         </main> <!-- main -->
     </div> <!-- .wrapper -->
     @include('admin.partials.scripts')
+    <script>
+        function confirmDelete(id) {
+            if (confirm('Are you delete this recored ? ')) {
+                document.querySelector(`#deleteForm-id`).submit();
+
+            }
+        }
+    </script>
 </body>
 
 </html>

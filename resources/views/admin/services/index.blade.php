@@ -30,17 +30,13 @@
                                 <td>{{ $service->title }}</td>
                                 <td width="15%"><i class="{{ $service->icon }} fa-2x"></i></td>
                                 <td width="20%">
-                                    <x-action-buttons toRoute="{{ route('admin.services.edit', ['service' => $service]) }}" type="edit" />
-                                    <x-action-buttons toRoute="{{ route('admin.services.show', ['service' => $service]) }}" type="show" />
-                                    <form action="{{ route('admin.services.destroy', ['service' => $service]) }}"
-                                        method="POST" class="d-inline" id="deleteForm-{{ $service->id }}">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger" onclick="confirmDelete({{ $service->id }})">
-                                            <i class="fe fe-trash"></i>
-                                        </button>
-                                    </form>
-
+                                    <x-action-buttons toRoute="{{ route('admin.services.edit', ['service' => $service]) }}"
+                                        type="edit" />
+                                    <x-action-buttons toRoute="{{ route('admin.services.show', ['service' => $service]) }}"
+                                        type="show" />
+                                    <x-delete-button
+                                        toRoute="{{ route('admin.services.destroy', ['service' => $service]) }}"
+                                        id="{{ $service->id }}" />
                                 </td>
                             </tr>
                         @empty
@@ -54,12 +50,5 @@
             </div>
         </div>
     </div> <!-- .container-fluid -->
-    <script>
-        function confirmDelete(id) {
-            if (confirm('Are you delete this recored ? ')) {
-                document.querySelector(`#deleteForm-id`).submit();
 
-            }
-        }
-    </script>
 @endsection
