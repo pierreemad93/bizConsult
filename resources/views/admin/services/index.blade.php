@@ -5,9 +5,7 @@
         <div class="page-title-box d-sm-flex align-items-center justify-content-between mb-3">
             <h2 class="h5 page-title">{{ __('admin.service') }}</h2>
             <div class="page-title-right">
-                <a href="{{ route('admin.services.create') }}" class="btn btn-primary">
-                    {{ __('admin.add_new') }}
-                </a>
+                <x-action-buttons toRoute="{{ route('admin.services.create') }}" type="create" />
             </div>
         </div>
 
@@ -32,14 +30,8 @@
                                 <td>{{ $service->title }}</td>
                                 <td width="15%"><i class="{{ $service->icon }} fa-2x"></i></td>
                                 <td width="20%">
-                                    <a href="{{ route('admin.services.edit', ['service' => $service]) }}"
-                                        class="btn btn-success">
-                                        <i class="fe fe-edit"></i>
-                                    </a>
-                                    <a href="{{ route('admin.services.show', ['service' => $service]) }}"
-                                        class="btn btn-primary">
-                                        <i class="fe fe-eye"></i>
-                                    </a>
+                                    <x-action-buttons toRoute="{{ route('admin.services.edit', ['service' => $service]) }}" type="edit" />
+                                    <x-action-buttons toRoute="{{ route('admin.services.show', ['service' => $service]) }}" type="show" />
                                     <form action="{{ route('admin.services.destroy', ['service' => $service]) }}"
                                         method="POST" class="d-inline" id="deleteForm-{{ $service->id }}">
                                         @csrf
