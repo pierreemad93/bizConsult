@@ -32,6 +32,8 @@
                 name="{{ __('admin.service') }}" />
             <x-sidebar-tab route="{{ route('admin.features.index') }}" icon="fe-bookmark"
                 name="{{ __('admin.features') }}" />
+            <x-sidebar-tab route="{{ route('admin.messages.index') }}" icon="fe-message-circle"
+                name="{{ __('admin.messages') }}" />
         </ul>
 
     </nav>

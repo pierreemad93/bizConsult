@@ -21,7 +21,7 @@ return [
     'components' => 'Components',
     'visit' => 'Visit site',
     //services 
-    'service' => 'Service',
+    'service' => 'Services',
     'title' => 'Title',
     'icon' => 'Icon',
     'description' => 'Description',
@@ -37,6 +37,14 @@ return [
     'submit' => 'Submit',
     'show_feature' => 'Show feature',
     'edit_feature' => 'Edit feature',
+    //services 
+    'messages' => 'Messages',
+    'no_messages_found' => 'No messages Found',
+    'show_message' => 'Show message',
+    'name' => 'Name',
+    'email' => 'Email',
+    'subject' => 'Subject',
+    'message' => 'Message',
 
 
 ];
