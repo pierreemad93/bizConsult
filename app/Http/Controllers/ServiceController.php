@@ -6,6 +6,7 @@ use App\Models\Service;
 use App\Http\Requests\StoreServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
 
+
 class ServiceController extends Controller
 {
     /**
@@ -14,6 +15,7 @@ class ServiceController extends Controller
     public function index()
     {
         //
+        
         $services = Service::paginate(config('paginate.count'));
         return view('admin.services.index', get_defined_vars());
     }
