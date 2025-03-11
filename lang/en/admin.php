@@ -6,6 +6,10 @@ return [
     'welcome' => 'Welcome',
     'action' => 'Action',
     'add_new' => 'Add new',
+    'create_successfully' => 'Your record created successfully',
+    'update_successfully' => 'Your record updated successfully ',
+    'delete_successfully' => 'Your record deleted successfully ',
+    'back' => 'Back',
     //   admin login translation 
     'sign_in' => 'Sign in',
     'email' => 'Email Address',
@@ -23,11 +27,15 @@ return [
     'no_services_found' => 'No services Found',
     'add_new_service' => 'Add new service',
     'submit' => 'Submit',
-    'create_successfully' => 'Your record created successfully',
-    'show_service' => 'Show Service',
-    'back' => 'Back',
+    'show_service' => 'Show service',
     'edit_service' => 'Edit service',
-    'update_successfully' => 'Your record updated successfully ',
-    'delete_successfully' => 'Your record deleted successfully ',
+    //Features
+    'features' => 'Features',
+    'no_features_found' => 'No features Found',
+    'add_new_feature' => 'Add new feature',
+    'submit' => 'Submit',
+    'show_feature' => 'Show feature',
+    'edit_feature' => 'Edit feature',
+
 
 ];

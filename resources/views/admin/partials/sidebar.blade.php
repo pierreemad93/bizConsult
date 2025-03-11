@@ -32,6 +32,7 @@
         <ul class="navbar-nav flex-fill w-100 mb-2">
             {{-- Services --}}
             <x-sidebar-tab route="{{ route('admin.services.index') }}" icon="fe-layers" name="{{ __('admin.service') }}" />
+            <x-sidebar-tab route="{{ route('admin.features.index') }}" icon="fe-bookmark" name="{{ __('admin.features') }}" />
         </ul>
 
     </nav>
