@@ -19,6 +19,7 @@ return [
     //
     'home' => 'Home',
     'components' => 'Components',
+    'visit' => 'Visit site',
     //services 
     'service' => 'Service',
     'title' => 'Title',

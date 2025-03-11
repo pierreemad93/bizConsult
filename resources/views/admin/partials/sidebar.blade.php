@@ -18,21 +18,20 @@
             </a>
         </div>
         <ul class="navbar-nav flex-fill w-100 mb-2">
-            <li class="nav-item">
-                <a href="{{ route('admin.home') }}" class=" nav-link">
-                    <i class="fe fe-home fe-16"></i>
-                    <span class="ml-3 item-text">{{ __('admin.home') }}</span><span class="sr-only">(current)</span>
-                </a>
+            <x-sidebar-tab route="{{ route('admin.home') }}" icon="fe-home" name="{{ __('admin.home') }}" />
+            <x-sidebar-tab route="{{ route('index') }}" icon="fe-layout" name="{{ __('admin.visit') }}" />
 
-            </li>
+
         </ul>
         <p class="text-muted nav-heading mt-4 mb-1">
             <span>{{ __('admin.components') }}</span>
         </p>
         <ul class="navbar-nav flex-fill w-100 mb-2">
             {{-- Services --}}
-            <x-sidebar-tab route="{{ route('admin.services.index') }}" icon="fe-layers" name="{{ __('admin.service') }}" />
-            <x-sidebar-tab route="{{ route('admin.features.index') }}" icon="fe-bookmark" name="{{ __('admin.features') }}" />
+            <x-sidebar-tab route="{{ route('admin.services.index') }}" icon="fe-layers"
+                name="{{ __('admin.service') }}" />
+            <x-sidebar-tab route="{{ route('admin.features.index') }}" icon="fe-bookmark"
+                name="{{ __('admin.features') }}" />
         </ul>
 
     </nav>
