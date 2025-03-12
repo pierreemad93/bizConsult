@@ -14,8 +14,8 @@ class {{ class }} extends Controller
     public function index()
     {
         //
-         $services = {{ model }}::paginate(config('paginate.count'));
-         return view('admin.services.index', get_defined_vars());
+         ${{ modelVariable }}s = {{ model }}::paginate(config('paginate.count'));
+         return view('admin.{{ modelVariable }}s.index', get_defined_vars());
     }
 
     /**
@@ -24,7 +24,7 @@ class {{ class }} extends Controller
     public function create()
     {
         //
-         return view("admin.services.create");
+         return view('admin.{{ modelVariable }}s.create');
     }
 
     /**
@@ -35,7 +35,7 @@ class {{ class }} extends Controller
         //
         $data = $request->validated();
         {{model}}::create($data);
-        return to_route('admin.services.index')->with('success', __('admin.create_successfully'));
+        return to_route('admin.{{ modelVariable }}s.index')->with('success', __('admin.create_successfully'));
     }
 
     /**
@@ -44,7 +44,7 @@ class {{ class }} extends Controller
     public function show({{ model }} ${{ modelVariable }})
     {
         //
-        return view('admin.services.show', get_defined_vars());
+        return view('admin.{{ modelVariable }}s.show', get_defined_vars());
     }
 
     /**
@@ -53,7 +53,7 @@ class {{ class }} extends Controller
     public function edit({{ model }} ${{ modelVariable }})
     {
         //
-        return view('admin.services.edit', get_defined_vars());
+        return view('admin.{{ modelVariable }}s.edit', get_defined_vars());
     }
 
     /**
@@ -64,7 +64,7 @@ class {{ class }} extends Controller
         //
         $data = $request->validated();
         ${{ modelVariable }}->update($data);
-        return to_route('admin.services.index')->with('success', __('admin.update_successfully'));
+        return to_route('admin.{{ modelVariable }}s.index')->with('success', __('admin.update_successfully'));
     }
 
     /**
@@ -74,6 +74,6 @@ class {{ class }} extends Controller
     {
         //
         ${{ modelVariable }}->delete();
-        return to_route('admin.services.index')->with('success', __('admin.delete_successfully'));
+        return to_route('admin.{{ modelVariable }}s.index')->with('success', __('admin.delete_successfully'));
     }
 }
