@@ -45,6 +45,9 @@ return [
     'email' => 'Email',
     'subject' => 'Subject',
     'message' => 'Message',
+    //subscribers
+    'subscribers' => 'Subscribers',
+    'no_subscribers_found' =>  'No subscribers Found'
 
 
 ];
