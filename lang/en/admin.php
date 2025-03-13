@@ -47,7 +47,14 @@ return [
     'message' => 'Message',
     //subscribers
     'subscribers' => 'Subscribers',
-    'no_subscribers_found' =>  'No subscribers Found'
-
+    'no_subscribers_found' =>  'No subscribers Found',
+    //
+    'testmonials' => 'testmonials',
+    'no_testmonials_found' =>  'No testmonials Found',
+    'add_new_testmonial' => 'Add new testmonial',
+    'position' => 'Position',
+    'image' => 'Image',
+    'edit_testmonial' => 'Edit testmonial',
+    'show_testmonial' => 'Show testmonial',
 
 ];
