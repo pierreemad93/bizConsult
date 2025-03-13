@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EndUserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,15 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('enduser.index');
-})->name('index');
+Route::controller(EndUserController::class)->group(function () {
 
-Route::get('/about', function () {
-    return view('enduser.about');
-})->name('about');
-Route::view('/service', 'enduser.service')->name('service');
-Route::view('/contact', 'enduser.contact')->name('contact');
+    Route::get('/', 'index')->name('index');
+    Route::get('/about', 'about')->name('about');
+    Route::get('/service', 'service')->name('service');
+    Route::get('/contact', 'contact')->name('contact');
+});
+
 
 
 
@@ -35,5 +35,3 @@ Route::view('/contact', 'enduser.contact')->name('contact');
 //     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
-
-
