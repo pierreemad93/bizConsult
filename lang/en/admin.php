@@ -56,5 +56,15 @@ return [
     'image' => 'Image',
     'edit_testmonial' => 'Edit testmonial',
     'show_testmonial' => 'Show testmonial',
+    //settings
+    'settings' => 'Settings',
+    'address' => 'Address',
+    'phone' => 'Phone' ,
+    'facebook' => 'Facebook',
+    'youtube' => 'Youtube',
+    'instagram' => 'Instagram',
+    'linkedin' => 'Linkedin',
+    'twitter' => 'Twitter'
+
 
 ];

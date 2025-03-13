@@ -38,6 +38,8 @@
                 name="{{ __('admin.subscribers') }}" />
             <x-sidebar-tab route="{{ route('admin.testmonials.index') }}" icon="fe-mic"
                 name="{{ __('admin.testmonials') }}" />
+            <x-sidebar-tab route="{{ route('admin.settings.index') }}" icon="fe-settings"
+                name="{{ __('admin.settings') }}" />
         </ul>
 
     </nav>
