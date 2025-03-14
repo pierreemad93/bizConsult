@@ -16,10 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::controller(EndUserController::class)->group(function () {
-
+    // Home Page
+    Route::post('/subscriber/store', 'subscriberStore')->name('subscriber.store');
     Route::get('/', 'index')->name('index');
+    //About page
     Route::get('/about', 'about')->name('about');
+    //Service page
     Route::get('/service', 'service')->name('service');
+    //Contact page
     Route::get('/contact', 'contact')->name('contact');
 });
 

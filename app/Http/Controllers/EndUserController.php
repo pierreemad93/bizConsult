@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreSubscriberRequest;
+use App\Models\Subscriber;
 use Illuminate\Http\Request;
 
 class EndUserController extends Controller
@@ -22,5 +24,11 @@ class EndUserController extends Controller
     public function contact()
     {
         return view('enduser.contact', get_defined_vars());
+    }
+    public function subscriberStore(StoreSubscriberRequest $request)
+    {
+        $data = $request->validated();
+        Subscriber::create($data);
+        return back()->with(['subscriber_success'=> 'Your mail send successfully']);
     }
 }

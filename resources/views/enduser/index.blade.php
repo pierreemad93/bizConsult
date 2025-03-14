@@ -76,10 +76,17 @@
                     <h3 class="text-white">Ready to get started</h3>
                     <small class="text-white">Diam elitr est dolore at sanctus nonumy.</small>
                     <div class="position-relative w-100 mt-3">
-                        <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
-                            placeholder="Enter Your Email" style="height: 48px;">
-                        <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
-                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        <form action="{{ route('subscriber.store') }}" method="POST">
+                            @csrf
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
+                                placeholder="Enter Your Email" name="email" style="height: 48px;">
+                            <x-input-error :messages="$errors->get('email')" />
+                            <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                    class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </form>
+                        @session('subscriber_success')
+                            <small class="text-white">{{ session('subscriber_success') }}</small>
+                        @endsession
                     </div>
                 </div>
                 <div class="col-md-6 text-center mb-n5 d-none d-md-block">

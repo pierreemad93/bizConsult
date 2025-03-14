@@ -23,6 +23,7 @@ class StoreSubscriberRequest extends FormRequest
     {
         return [
             //
+            'email' => 'required|email|unique:subscribers,email',
         ];
     }
 }
