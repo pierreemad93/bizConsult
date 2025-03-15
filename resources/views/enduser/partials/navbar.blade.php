@@ -8,10 +8,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
-            <a href="{{route('index')}}" class="nav-item nav-link @yield('home-active')">Home</a>
+            <a href="{{ route('index') }}" class="nav-item nav-link @yield('home-active')">Home</a>
             <a href="{{ route('about') }}" class="nav-item nav-link @yield('about-active')">About</a>
-            <a href="{{route('service')}}" class="nav-item nav-link @yield('service-active')">Service</a>
-            <a href="{{route('contact')}}" class="nav-item nav-link @yield('contact-active')">Contact</a>
+            <a href="{{ route('service') }}" class="nav-item nav-link @yield('service-active')">Service</a>
+            <a href="{{ route('contact') }}" class="nav-item nav-link @yield('contact-active')">Contact</a>
+            @auth
+                <a href="{{ route('admin.home') }}" class="nav-item nav-link">Admin Panel</a>
+            @endauth
         </div>
     </div>
 </nav>
