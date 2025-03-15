@@ -24,6 +24,7 @@ Route::controller(EndUserController::class)->group(function () {
     //Service page
     Route::get('/service', 'service')->name('service');
     //Contact page
+    Route::post('/contact/sent-message' , 'sentMessage')->name('contact.sentMessage');
     Route::get('/contact', 'contact')->name('contact');
 });
 
