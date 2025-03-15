@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SettingController;
@@ -16,7 +17,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('messages', MessageController::class)->only(['index', 'show', 'destroy']);
     Route::resource('subscribers', SubscriberController::class)->only(['index', 'destroy']);
     Route::resource('testmonials', TestmonialController::class);
-    Route::resource('settings', SettingController::class)->only(['index' , 'update']);
+    Route::resource('members', MemberController::class);
+    Route::resource('settings', SettingController::class)->only(['index', 'update']);
 });
 
 require __DIR__ . '/auth.php';

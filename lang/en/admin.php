@@ -48,7 +48,7 @@ return [
     //subscribers
     'subscribers' => 'Subscribers',
     'no_subscribers_found' =>  'No subscribers Found',
-    //
+    //Testminials
     'testmonials' => 'testmonials',
     'no_testmonials_found' =>  'No testmonials Found',
     'add_new_testmonial' => 'Add new testmonial',
@@ -56,10 +56,15 @@ return [
     'image' => 'Image',
     'edit_testmonial' => 'Edit testmonial',
     'show_testmonial' => 'Show testmonial',
+    //Memebers
+    'members' => 'Members',
+    'no_members_found' => 'No members Found',
+    'add_new_member' => 'Add new member',
+    'show_member' => 'Show Member' ,
     //settings
     'settings' => 'Settings',
     'address' => 'Address',
-    'phone' => 'Phone' ,
+    'phone' => 'Phone',
     'facebook' => 'Facebook',
     'youtube' => 'Youtube',
     'instagram' => 'Instagram',
