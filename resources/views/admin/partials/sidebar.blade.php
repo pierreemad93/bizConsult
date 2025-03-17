@@ -33,9 +33,9 @@
             <x-sidebar-tab route="{{ route('admin.features.index') }}" icon="fe-bookmark"
                 name="{{ __('admin.features') }}" />
             <x-sidebar-tab route="{{ route('admin.messages.index') }}" icon="fe-message-circle"
-                name="{{ __('admin.messages') }}" />
+                name="{{ __('admin.messages') }}" counter="{{ $countMessages }}" />
             <x-sidebar-tab route="{{ route('admin.subscribers.index') }}" icon="fe-users"
-                name="{{ __('admin.subscribers') }}" />
+                name="{{ __('admin.subscribers') }}" counter="{{ $countSubscribers }}"/>
             <x-sidebar-tab route="{{ route('admin.testmonials.index') }}" icon="fe-mic"
                 name="{{ __('admin.testmonials') }}" />
             <x-sidebar-tab route="{{ route('admin.members.index') }}" icon="fe-users"
