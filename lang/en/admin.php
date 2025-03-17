@@ -61,6 +61,12 @@ return [
     'no_members_found' => 'No members Found',
     'add_new_member' => 'Add new member',
     'show_member' => 'Show Member' ,
+    //Clients
+    'clients' => 'Clients',
+    'no_clients_found' => 'No clients Found',
+    'add_new_client' => 'Add new client',
+    'show_client' => 'Show client' ,
+    'edit_client' => 'Edit client' ,
     //settings
     'settings' => 'Settings',
     'address' => 'Address',

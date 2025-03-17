@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\MemberController;
@@ -18,6 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('subscribers', SubscriberController::class)->only(['index', 'destroy']);
     Route::resource('testmonials', TestmonialController::class);
     Route::resource('members', MemberController::class);
+    Route::resource('clients', ClientController::class);
     Route::resource('settings', SettingController::class)->only(['index', 'update']);
 });
 

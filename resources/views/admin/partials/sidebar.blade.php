@@ -40,6 +40,8 @@
                 name="{{ __('admin.testmonials') }}" />
             <x-sidebar-tab route="{{ route('admin.members.index') }}" icon="fe-users"
                 name="{{ __('admin.members') }}" />
+            <x-sidebar-tab route="{{ route('admin.clients.index') }}" icon="fe-users"
+                name="{{ __('admin.clients') }}" />
             <x-sidebar-tab route="{{ route('admin.settings.index') }}" icon="fe-settings"
                 name="{{ __('admin.settings') }}" />
         </ul>
