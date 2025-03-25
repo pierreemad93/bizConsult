@@ -7,77 +7,27 @@
 
         </div>
     </div>
-
     <div class="card shadow">
         <div class="card-body">
-            <x-success-alert />
-            <form action="{{ route('admin.settings.update', ['setting' => $setting]) }}" method="POST"
-                enctype="multipart/form-data">
-                @csrf
-                @method('Put')
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <x-input-label>{{ __('admin.address') }}</x-input-label>
-                            <input type="text" class="form-control" name="address" value="{{ $setting->address }}">
-                            <x-input-error :messages="$errors->get('address')" />
-                        </div>
-                    </div> <!-- /.col -->
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <x-input-label>{{ __('admin.email') }}</x-input-label>
-                            <input type="text" class="form-control" name="email" value="{{ $setting->email }}">
-                            <x-input-error :messages="$errors->get('email')" />
-                        </div>
-                    </div> <!-- /.col -->
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <x-input-label>{{ __('admin.phone') }}</x-input-label>
-                            <input type="text" class="form-control" name="phone" value="{{ $setting->phone }}">
-                            <x-input-error :messages="$errors->get('phone')" />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <x-input-label>{{ __('admin.facebook') }}</x-input-label>
-                            <input type="url" class="form-control" name="facebook" value="{{ $setting->facebook }}">
-                            <x-input-error :messages="$errors->get('facebook')" />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <x-input-label>{{ __('admin.twitter') }}</x-input-label>
-                            <input type="url" class="form-control" name="twitter" value="{{ $setting->twitter }}">
-                            <x-input-error :messages="$errors->get('twitter')" />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <x-input-label>{{ __('admin.linkedin') }}</x-input-label>
-                            <input type="url" class="form-control" name="linkedin" value="{{ $setting->linkedin }}">
-                            <x-input-error :messages="$errors->get('linkedin')" />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <x-input-label>{{ __('admin.youtube') }}</x-input-label>
-                            <input type="url" class="form-control" name="youtube" value="{{ $setting->youtube }}">
-                            <x-input-error :messages="$errors->get('youtube')" />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <x-input-label>{{ __('admin.instagram') }}</x-input-label>
-                            <input type="url" class="form-control" name="instagram" value="{{ $setting->instagram }}">
-                            <x-input-error :messages="$errors->get('instagram')" />
-                        </div>
-                    </div>
-                    
+            <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+                        aria-controls="pills-home" aria-selected="true">{{ __('admin.general') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+                        aria-controls="pills-profile" aria-selected="false">{{ __('admin.role') }}</a>
+                </li>
+            </ul>
+            <div class="tab-content mb-1" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    @include('admin.settings.general')
                 </div>
-                <x-primary-button>{{ __('admin.submit') }}</x-primary-button>
-            </form>
-        </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <x-role-component />
+                </div>
 
-    </div>
+            </div>
+        </div>
     </div> <!-- .container-fluid -->
 @endsection
