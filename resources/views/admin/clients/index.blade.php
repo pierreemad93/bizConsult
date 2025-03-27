@@ -5,7 +5,9 @@
         <div class="page-title-box d-sm-flex align-items-center justify-content-between mb-3">
             <h2 class="h5 page-title">{{ __('admin.clients') }}</h2>
             <div class="page-title-right">
-                <x-action-buttons toRoute="{{ route('admin.clients.create') }}" type="create" />
+                @can('client-create')
+                    <x-action-buttons toRoute="{{ route('admin.clients.create') }}" type="create" />
+                @endcan
             </div>
         </div>
 
@@ -27,19 +29,24 @@
                         @forelse ($clients as $key=>$client)
                             <tr>
                                 <td width="10%">{{ $clients->firstItem() + $loop->index }}</td>
-                                <td >{{ $client->name }}</td>
-                                <td >
-                                    <img src="{{ asset("storage/clients/$client->image") }}" style="height:20vh"/>    
-                        
+                                <td>{{ $client->name }}</td>
+                                <td>
+                                    <img src="{{ asset("storage/clients/$client->image") }}" style="height:20vh" />
+
                                 </td>
                                 <td width="20%">
-                                    <x-action-buttons toRoute="{{ route('admin.clients.edit', ['client' => $client]) }}"
-                                        type="edit" />
-                                    <x-action-buttons toRoute="{{ route('admin.clients.show', ['client' => $client]) }}"
-                                        type="show" />
-                                    <x-delete-button
-                                        toRoute="{{ route('admin.clients.destroy', ['client' => $client]) }}"
-                                        id="{{ $client->id }}" />
+                                    @can('client-edit')
+                                        <x-action-buttons toRoute="{{ route('admin.clients.edit', ['client' => $client]) }}"
+                                            type="edit" />
+                                    @endcan
+                                    @can('client-view')
+                                        <x-action-buttons toRoute="{{ route('admin.clients.show', ['client' => $client]) }}"
+                                            type="show" />
+                                    @endcan
+                                    @can('client-delete')
+                                        <x-delete-button toRoute="{{ route('admin.clients.destroy', ['client' => $client]) }}"
+                                            id="{{ $client->id }}" />
+                                    @endcan
                                 </td>
                             </tr>
                         @empty

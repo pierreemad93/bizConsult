@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Member;
+use Illuminate\Support\Facades\Gate;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreMemberRequest;
 use App\Http\Requests\UpdateMemberRequest;
@@ -15,6 +17,9 @@ class MemberController extends Controller
     public function index()
     {
         //
+        if (!Gate::any(['member-anyView', 'member-create', 'member-edit', 'member-view', 'member-delete'])) {
+            return redirect(RouteServiceProvider::HOME);
+        }
         $members = Member::paginate(config('paginate.count'));
         return view('admin.members.index', get_defined_vars());
     }
@@ -25,6 +30,7 @@ class MemberController extends Controller
     public function create()
     {
         //
+        Gate::authorize('member-create');
         return view('admin.members.create');
     }
 
@@ -34,6 +40,7 @@ class MemberController extends Controller
     public function store(StoreMemberRequest $request)
     {
         //
+        Gate::authorize('member-create');
         $data = $request->validated();
         //upload image
         $image = $request->image;
@@ -50,6 +57,7 @@ class MemberController extends Controller
     public function show(Member $member)
     {
         //
+        Gate::authorize('member-view');
         return view('admin.members.show', get_defined_vars());
     }
 
@@ -59,6 +67,7 @@ class MemberController extends Controller
     public function edit(Member $member)
     {
         //
+        Gate::authorize('member-edit');
         return view('admin.members.edit', get_defined_vars());
     }
 
@@ -68,6 +77,7 @@ class MemberController extends Controller
     public function update(UpdateMemberRequest $request, Member $member)
     {
         //
+        Gate::authorize('member-edit');
         $data = $request->validated();
         if ($request->hasFile('image')) {
             Storage::delete("public/member/$member->image");
@@ -86,6 +96,7 @@ class MemberController extends Controller
     public function destroy(Member $member)
     {
         //
+        Gate::authorize('member-delete');
         $member->delete();
         return to_route('admin.members.index')->with('success', __('admin.delete_successfully'));
     }

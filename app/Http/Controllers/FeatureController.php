@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Feature;
+use Illuminate\Support\Facades\Gate;
+use App\Providers\RouteServiceProvider;
 use App\Http\Requests\StoreFeatureRequest;
 use App\Http\Requests\UpdateFeatureRequest;
 
@@ -14,8 +16,11 @@ class FeatureController extends Controller
     public function index()
     {
         //
-         $features = Feature::paginate(config('paginate.count'));
-         return view('admin.features.index', get_defined_vars());
+        if (!Gate::any(['feature-anyView', 'feature-create', 'feature-edit', 'feature-view', 'feature-delete'])) {
+            return redirect(RouteServiceProvider::HOME);
+        }
+        $features = Feature::paginate(config('paginate.count'));
+        return view('admin.features.index', get_defined_vars());
     }
 
     /**
@@ -24,7 +29,8 @@ class FeatureController extends Controller
     public function create()
     {
         //
-         return view("admin.features.create");
+        Gate::authorize('feature-create');
+        return view("admin.features.create");
     }
 
     /**
@@ -33,6 +39,7 @@ class FeatureController extends Controller
     public function store(StoreFeatureRequest $request)
     {
         //
+        Gate::authorize('feature-create');
         $data = $request->validated();
         Feature::create($data);
         return to_route('admin.features.index')->with('success', __('admin.create_successfully'));
@@ -44,6 +51,7 @@ class FeatureController extends Controller
     public function show(Feature $feature)
     {
         //
+        Gate::authorize('feature-view');
         return view('admin.features.show', get_defined_vars());
     }
 
@@ -53,6 +61,7 @@ class FeatureController extends Controller
     public function edit(Feature $feature)
     {
         //
+        Gate::authorize('feature-edit');
         return view('admin.features.edit', get_defined_vars());
     }
 
@@ -62,6 +71,7 @@ class FeatureController extends Controller
     public function update(UpdateFeatureRequest $request, Feature $feature)
     {
         //
+        Gate::authorize('feature-edit');
         $data = $request->validated();
         $feature->update($data);
         return to_route('admin.features.index')->with('success', __('admin.update_successfully'));
@@ -73,6 +83,7 @@ class FeatureController extends Controller
     public function destroy(Feature $feature)
     {
         //
+        Gate::authorize('feature-delete');
         $feature->delete();
         return to_route('admin.features.index')->with('success', __('admin.delete_successfully'));
     }

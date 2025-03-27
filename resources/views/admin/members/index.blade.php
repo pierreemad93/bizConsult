@@ -5,7 +5,9 @@
         <div class="page-title-box d-sm-flex align-items-center justify-content-between mb-3">
             <h2 class="h5 page-title">{{ __('admin.members') }}</h2>
             <div class="page-title-right">
-                <x-action-buttons toRoute="{{ route('admin.members.create') }}" type="create" />
+                @can('member-create')
+                    <x-action-buttons toRoute="{{ route('admin.members.create') }}" type="create" />
+                @endcan
             </div>
         </div>
 
@@ -31,17 +33,23 @@
                                 <td>{{ $member->name }}</td>
                                 <td>{{ $member->position }}</td>
                                 <td width="15%">
-                                    <img src="{{ asset("storage/members/$member->image") }}" style="height:20vh"/>    
-                        
+                                    <img src="{{ asset("storage/members/$member->image") }}" style="height:20vh" />
+
                                 </td>
                                 <td width="20%">
-                                    <x-action-buttons toRoute="{{ route('admin.members.edit', ['member' => $member]) }}"
-                                        type="edit" />
-                                    <x-action-buttons toRoute="{{ route('admin.members.show', ['member' => $member]) }}"
-                                        type="show" />
-                                    <x-delete-button
-                                        toRoute="{{ route('admin.members.destroy', ['member' => $member]) }}"
-                                        id="{{ $member->id }}" />
+                                    @can('member-edit')
+                                        <x-action-buttons toRoute="{{ route('admin.members.edit', ['member' => $member]) }}"
+                                            type="edit" />
+                                    @endcan
+                                    @can('member-view')
+                                        <x-action-buttons toRoute="{{ route('admin.members.show', ['member' => $member]) }}"
+                                            type="show" />
+                                    @endcan
+                                    @can('member-delete')
+                                        <x-delete-button toRoute="{{ route('admin.members.destroy', ['member' => $member]) }}"
+                                            id="{{ $member->id }}" />
+                                    @endcan
+
                                 </td>
                             </tr>
                         @empty

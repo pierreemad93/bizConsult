@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\RoleRequest;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Gate;
 
 class RoleController extends Controller
 {
@@ -16,6 +17,7 @@ class RoleController extends Controller
     public function store(RoleRequest $request)
     {
         //
+        Gate::authorize('role-create');
         $data = $request->validated();
         $permissions = $data['permissionArray'];
         $role = Role::create([
@@ -35,6 +37,7 @@ class RoleController extends Controller
     public function update(RoleRequest $request, Role $role)
     {
         //
+        Gate::authorize('role-edit');
         $data = $request->validated();
         $role->update(['name' => $data['name']]);
         $role->syncPermissions();
@@ -52,6 +55,7 @@ class RoleController extends Controller
     public function destroy(Role $role)
     {
         //
+        Gate::authorize('role-delete');
         $permissions = $role->permissions()->get();
         foreach ($permissions as $permission) {
             $role->revokePermissionTo($permission);

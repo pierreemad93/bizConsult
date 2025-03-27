@@ -5,7 +5,9 @@
         <div class="page-title-box d-sm-flex align-items-center justify-content-between mb-3">
             <h2 class="h5 page-title">{{ __('admin.testmonials') }}</h2>
             <div class="page-title-right">
-                <x-action-buttons toRoute="{{ route('admin.testmonials.create') }}" type="create" />
+                @can('testmonial-create')
+                    <x-action-buttons toRoute="{{ route('admin.testmonials.create') }}" type="create" />
+                @endcan
             </div>
         </div>
 
@@ -31,17 +33,25 @@
                                 <td>{{ $testmonial->name }}</td>
                                 <td>{{ $testmonial->position }}</td>
                                 <td width="15%">
-                                    <img src="{{ asset("storage/testmonials/$testmonial->image") }}"/>    
-                        
+                                    <img src="{{ asset("storage/testmonials/$testmonial->image") }}"  style="height:20vh"/>
+
                                 </td>
                                 <td width="20%">
-                                    <x-action-buttons toRoute="{{ route('admin.testmonials.edit', ['testmonial' => $testmonial]) }}"
-                                        type="edit" />
-                                    <x-action-buttons toRoute="{{ route('admin.testmonials.show', ['testmonial' => $testmonial]) }}"
-                                        type="show" />
-                                    <x-delete-button
-                                        toRoute="{{ route('admin.testmonials.destroy', ['testmonial' => $testmonial]) }}"
-                                        id="{{ $testmonial->id }}" />
+                                    @can('testmonial-edit')
+                                        <x-action-buttons
+                                            toRoute="{{ route('admin.testmonials.edit', ['testmonial' => $testmonial]) }}"
+                                            type="edit" />
+                                    @endcan
+                                    @can('testmonial-view')
+                                        <x-action-buttons
+                                            toRoute="{{ route('admin.testmonials.show', ['testmonial' => $testmonial]) }}"
+                                            type="show" />
+                                    @endcan
+                                    @can('testmonial-delete')
+                                        <x-delete-button
+                                            toRoute="{{ route('admin.testmonials.destroy', ['testmonial' => $testmonial]) }}"
+                                            id="{{ $testmonial->id }}" />
+                                    @endcan
                                 </td>
                             </tr>
                         @empty

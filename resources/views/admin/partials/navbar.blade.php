@@ -35,6 +35,15 @@
                 </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <h6 class="dropdown-item">
+                    <div class="my-2">
+                        {{ Auth::guard('admin')->user()->name }}
+                    </div>
+                    <div class="text-muted">
+                        {{ Auth::guard('admin')->user()->getRoleNames()->first() }}
+                    </div>
+                </h6>
+                <hr/>
                 <a class="dropdown-item" href="#">Profile</a>
                 <a class="dropdown-item" href="#">Settings</a>
                 <a class="dropdown-item" href="#">Activities</a>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Subscriber;
+use Illuminate\Support\Facades\Gate;
+use App\Providers\RouteServiceProvider;
 
 class SubscriberController extends Controller
 {
@@ -12,6 +14,9 @@ class SubscriberController extends Controller
     public function index()
     {
         //
+        if (!Gate::any(['subscriber-anyView', 'subscriber-delete'])) {
+            return redirect(RouteServiceProvider::HOME);
+        }
         $subscribers = Subscriber::paginate(config('paginate.count'));
         return view('admin.subscribers.index', get_defined_vars());
     }
@@ -22,6 +27,7 @@ class SubscriberController extends Controller
     public function destroy(Subscriber $subscriber)
     {
         //
+        Gate::authorize('subscriber-delete');
         $subscriber->delete();
         return to_route('admin.subscribers.index')->with('success', __('admin.delete_successfully'));
     }

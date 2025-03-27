@@ -14,18 +14,22 @@
                     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
                         aria-controls="pills-home" aria-selected="true">{{ __('admin.general') }}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-                        aria-controls="pills-profile" aria-selected="false">{{ __('admin.role') }}</a>
-                </li>
+                @canany(['role-anyView', 'role-create', 'role-edit', 'role-view', 'role-delete'])
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+                            aria-controls="pills-profile" aria-selected="false">{{ __('admin.role') }}</a>
+                    </li>
+                @endcanany
             </ul>
             <div class="tab-content mb-1" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                     @include('admin.settings.general')
                 </div>
-                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                    <x-role-component />
-                </div>
+                @canany(['role-anyView', 'role-create', 'role-edit', 'role-view', 'role-delete'])
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <x-role-component />
+                    </div>
+                @endcanany
 
             </div>
         </div>

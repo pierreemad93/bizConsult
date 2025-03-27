@@ -27,9 +27,12 @@
                                 <td>{{ $subscriber->email }}</td>
 
                                 <td>
-                                    <x-delete-button
-                                        toRoute="{{ route('admin.subscribers.destroy', ['subscriber' => $subscriber]) }}"
-                                        id="{{ $subscriber->id }}" />
+                                    @can('subscriber-delete')
+                                        <x-delete-button
+                                            toRoute="{{ route('admin.subscribers.destroy', ['subscriber' => $subscriber]) }}"
+                                            id="{{ $subscriber->id }}" />
+                                    @endcan
+
                                 </td>
                             </tr>
                         @empty

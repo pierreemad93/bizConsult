@@ -14,6 +14,7 @@ return [
     'sign_in' => 'Sign in',
     'email' => 'Email Address',
     'password' => 'Password',
+    'password_confirmation' => 'Password Confirmation',
     'remember' => 'Remember',
     'logout' => 'Logout',
     //
@@ -61,6 +62,11 @@ return [
     'no_members_found' => 'No members Found',
     'add_new_member' => 'Add new member',
     'show_member' => 'Show Member',
+    //Users
+    'users' => 'Users',
+    'no_users_found' => 'No users Found',
+    'add_new_user' => 'Add new user',
+    'show_user' => 'Show user',
     //Clients
     'clients' => 'Clients',
     'no_clients_found' => 'No clients Found',
@@ -75,8 +81,8 @@ return [
     'add_new_role' => 'Add new role',
     'no_of_permissions' => 'No of permissions',
     'show_role' => 'Show Role',
-    'edit_role' => 'Edit Role' ,
-    'delete_role' => 'Delete role' , 
+    'edit_role' => 'Edit Role',
+    'delete_role' => 'Delete role',
     'confirm' => 'Confrim',
     'address' => 'Address',
     'phone' => 'Phone',

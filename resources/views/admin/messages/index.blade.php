@@ -26,14 +26,18 @@
                             <tr>
                                 <td width="10%">{{ $messages->firstItem() + $loop->index }}</td>
                                 <td>{{ $message->name }}</td>
-                                <td>{{$message->email}}</td>
-                                <td>{{$message->subject}}</td>
+                                <td>{{ $message->email }}</td>
+                                <td>{{ $message->subject }}</td>
                                 <td>
-                                    <x-action-buttons toRoute="{{ route('admin.messages.show', ['message' => $message]) }}"
-                                        type="show" />
-                                    <x-delete-button
-                                        toRoute="{{ route('admin.messages.destroy', ['message' => $message]) }}"
-                                        id="{{ $message->id }}" />
+                                    @can('message-show')
+                                        <x-action-buttons toRoute="{{ route('admin.messages.show', ['message' => $message]) }}"
+                                            type="show" />
+                                    @endcan
+                                    @can('message-delete')
+                                        <x-delete-button
+                                            toRoute="{{ route('admin.messages.destroy', ['message' => $message]) }}"
+                                            id="{{ $message->id }}" />
+                                    @endcan
                                 </td>
                             </tr>
                         @empty

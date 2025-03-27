@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -64,6 +65,27 @@ class PermissionSeeder extends Seeder
                 'edit',
                 'delete'
             ],
+            'user' => [
+                'anyView',
+                'view',
+                'create',
+                'edit',
+                'delete'
+            ],
+            'setting' => [
+                'anyView',
+                'view',
+                'create',
+                'edit',
+                'delete'
+            ],
+            'role' => [
+                'anyView',
+                'view',
+                'create',
+                'edit',
+                'delete'
+            ],
         ];
         foreach ($permissions as $key => $actions) {
             foreach ($actions as $action) {
@@ -77,5 +99,7 @@ class PermissionSeeder extends Seeder
                 );
             }
         }
+        $superAdminRole = Role::updateOrCreate(['name' => 'super admin'], ['name' => 'super admin', 'guard_name' => 'admin']);
+        $superAdminRole->givePermissionTo(Permission::all());
     }
 }

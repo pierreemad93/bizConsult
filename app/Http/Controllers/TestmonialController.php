@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Testmonial;
+use Illuminate\Support\Facades\Gate;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreTestmonialRequest;
 use App\Http\Requests\UpdateTestmonialRequest;
@@ -15,6 +17,9 @@ class TestmonialController extends Controller
     public function index()
     {
         //
+        if (!Gate::any(['testmonial-anyView', 'testmonial-create', 'testmonial-edit', 'testmonial-view', 'testmonial-delete'])) {
+            return redirect(RouteServiceProvider::HOME);
+        }
         $testmonials = Testmonial::paginate(config('paginate.count'));
         return view('admin.testmonials.index', get_defined_vars());
     }
@@ -25,6 +30,7 @@ class TestmonialController extends Controller
     public function create()
     {
         //
+        Gate::authorize('testmonial-create');
         return view('admin.testmonials.create');
     }
 
@@ -34,6 +40,7 @@ class TestmonialController extends Controller
     public function store(StoreTestmonialRequest $request)
     {
         //
+        Gate::authorize('testmonial-create');
         $data = $request->validated();
         //upload image
         $image = $request->image;
@@ -50,6 +57,7 @@ class TestmonialController extends Controller
     public function show(Testmonial $testmonial)
     {
         //
+        Gate::authorize('testmonial-view');
         return view('admin.testmonials.show', get_defined_vars());
     }
 
@@ -59,6 +67,7 @@ class TestmonialController extends Controller
     public function edit(Testmonial $testmonial)
     {
         //
+        Gate::authorize('testmonial-edit');
         return view('admin.testmonials.edit', get_defined_vars());
     }
 
@@ -68,6 +77,7 @@ class TestmonialController extends Controller
     public function update(UpdateTestmonialRequest $request, Testmonial $testmonial)
     {
         //
+        Gate::authorize('testmonial-edit');
         $data = $request->validated();
         if ($request->hasFile('image')) {
             Storage::delete("public/testmonial/$testmonial->image");
@@ -86,6 +96,7 @@ class TestmonialController extends Controller
     public function destroy(Testmonial $testmonial)
     {
         //
+        Gate::authorize('testmonial-delete');
         Storage::delete("public/testmonial/$testmonial->image");
         $testmonial->delete();
         return to_route('admin.testmonials.index')->with('success', __('admin.delete_successfully'));
