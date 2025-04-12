@@ -1,5 +1,6 @@
-<div class="modal fade" id="showRole-{{ $role->id }}" tabindex="-1" role="dialog"
-    aria-labelledby="showRoleLabel" aria-hidden="true">
+@props(['id', 'role', 'permissions'])
+<div class="modal fade" id="{{ $id }}" tabindex="-1" role="dialog" aria-labelledby="showRoleLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -11,8 +12,7 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="recipient-name" class="col-form-label">{{ __('admin.name') }}</label>
-                    <input type="text" class="form-control" id="recipient-name"
-                        value="{{ $role->name }}" disabled>
+                    <input type="text" class="form-control" id="recipient-name" value="{{ $role->name }}" disabled>
                 </div>
                 <div class="form-group">
                     <div class="row">

@@ -1,4 +1,5 @@
-<div class="modal fade" id="editRole-{{ $role->id }}" tabindex="-1" role="dialog" aria-labelledby="addRoleLabel"
+@props(['id', 'role', 'permissions'])
+<div class="modal fade" id="{{ $id }}" tabindex="-1" role="dialog" aria-labelledby="addRoleLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

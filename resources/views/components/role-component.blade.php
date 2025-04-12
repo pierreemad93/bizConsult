@@ -86,15 +86,15 @@
                 </td>
             </tr>
             {{-- ShowRoleModal --}}
-            @include('admin.settings.show-role-modal')
+            <x-role.show id="showRole-{{ $role->id }}" :role="$role" :permissions="$role->permissions" />
             {{-- ./ShowRoleModal --}}
 
             {{-- EditRoleModal --}}
-            @include('admin.settings.edit-role-modal')
+            <x-role.edit id="editRole-{{ $role->id }}" :role="$role" :permissions="$permissions" />
             {{-- ./EditRoleModal --}}
 
             {{-- DeleteRoleModal --}}
-            @include('admin.settings.delete-role-modal')
+            <x-role.delete id="deleteRole-{{ $role->id }}" :role="$role" />
             {{-- ./DeleteRoleModal --}}
         @empty
             <x-no-record-found name="{{ __('admin.no_roles_found') }}" />
