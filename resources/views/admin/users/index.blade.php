@@ -33,19 +33,49 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->getRoleNames()->first() }}</td>
                                 <td width="15%">
-                                    <img src="{{ asset("storage/users/$user->image") }}" style="height:20vh"/>    
-                        
+                                    <img src="{{ asset("storage/users/$user->image") }}" style="height:20vh" />
                                 </td>
                                 <td width="20%">
                                     <x-action-buttons toRoute="{{ route('admin.users.edit', ['user' => $user]) }}"
                                         type="edit" />
                                     <x-action-buttons toRoute="{{ route('admin.users.show', ['user' => $user]) }}"
                                         type="show" />
-                                    <x-delete-button
-                                        toRoute="{{ route('admin.users.destroy', ['user' => $user]) }}"
-                                        id="{{ $user->id }}" />
+                                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                                        data-target="#deleteUser-{{ $user->id }}" data-whatever="@mdo">
+                                        <i class="fe fe-trash"></i>
+                                    </button>
                                 </td>
                             </tr>
+                            {{-- Delete user Modal --}}
+                            <div class="modal fade" id="deleteUser-{{ $user->id }}" tabindex="-1" role="dialog"
+                                aria-labelledby="addRoleLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="varyModalLabel">{{ __('admin.delete_user') }}</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h4 class="text-center">Are you sure to delete {{ $user->name }} ?</h4>
+                                            <form action="{{ route('admin.users.destroy', ['user' => $user]) }}"
+                                                method="POST"">
+                                                @csrf
+                                                @method('Delete')
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn mb-2 btn-secondary"
+                                                        data-dismiss="modal">Close</button>
+                                                    <button type="submit"
+                                                        class="btn mb-2 btn-danger">{{ __('admin.confirm') }}</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
                         @empty
                             <x-no-record-found name="{{ __('admin.no_users_found') }}" />
                         @endforelse

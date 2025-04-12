@@ -21,13 +21,25 @@ class UserRequest extends FormRequest
      */
     public function rules(): array
     {
+        // dd("test Request");
         $id = $this->route()->user->id ?? true;
         return [
             //
             'name' => 'required|string',
             'email' => 'required|email|unique:users,email,' . $id,
-            'password' => 'required|string|confirmed|min:8',
+            'password' => 'nullable|string|confirmed|min:8',
+            'image' => 'nullable|mimes:jpg,png',
             'role' => 'required',
+        ];
+    }
+    public function attributes(): array
+    {
+        return [
+            'name' => __('admin.name'),
+            'email' => __('admin.email'),
+            'password' => __('admin.password'),
+            'image' => __('admin.image'),
+            'role' => __('admin.role'),
         ];
     }
 }

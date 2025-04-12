@@ -101,5 +101,18 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('client-delete', function () {
             return permission('client-delete');
         });
+        //user gates
+        Gate::define('user-create', function () {
+            return permission('user-create');
+        });
+        Gate::define('user-edit', function () {
+            return permission('user-edit');
+        });
+        Gate::define('user-view', function () {
+            return permission('user-view');
+        });
+        Gate::define('user-delete', function () {
+            return permission('user-delete');
+        });
     }
 }
