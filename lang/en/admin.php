@@ -38,7 +38,7 @@ return [
     'submit' => 'Submit',
     'show_feature' => 'Show feature',
     'edit_feature' => 'Edit feature',
-    //services 
+    //messages 
     'messages' => 'Messages',
     'no_messages_found' => 'No messages Found',
     'show_message' => 'Show message',
