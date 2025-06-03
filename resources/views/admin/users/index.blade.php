@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', __('admin.user'))
+@section('title', __('admin.users'))
 @section('content')
     <div class="container-fluid">
         <div class="page-title-box d-sm-flex align-items-center justify-content-between mb-3">
